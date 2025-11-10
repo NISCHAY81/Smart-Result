@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Result | Smart Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+<!-- Header -->
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Brand Name -->
+        <a href="index.html" class="text-2xl font-bold text-blue-600 hover:text-blue-700">
+            Smart Result
+        </a>
+
+        <!-- Nav Links -->
+        <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+            <a th:href="@{'/'}" href="index.html" class="hover:text-blue-600 transition">Home</a>
+            <a href="view-result.html" class="text-blue-600 font-semibold border-b-2 border-blue-600">View Result</a>
+            <a href="add-result.html" class="hover:text-blue-600 transition">Add Result</a>
+            <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+            <a href="#about" class="hover:text-blue-600 transition">About</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="menu" class="hidden md:hidden bg-white shadow-lg">
+        <nav class="flex flex-col space-y-4 px-6 py-4 text-gray-700 font-medium">
+            <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+            <a href="view-result.html" class="text-blue-600 font-semibold">View Result</a>
+            <a href="add-result.html" class="hover:text-blue-600 transition">Add Result</a>
+            <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+            <a href="#about" class="hover:text-blue-600 transition">About</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Section -->
+<main class="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-6">
+
+    <!-- Page Title -->
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 text-center">
+        Check Your <span class="text-blue-600">Result</span>
+    </h1>
+    <p class="text-gray-600 text-lg mb-10 text-center max-w-2xl">
+        Enter your roll number below and click on <span class="font-semibold text-blue-600">Get Result</span> to view your academic performance instantly.
+    </p>
+
+    <!-- Result Form -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-lg">
+        <form th:action="@{'/results/view-result'}" method="post" id="result-form" class="flex flex-col space-y-6">
+            <div>
+                <label for="rollNumber" class="block text-gray-700 font-semibold mb-2">Roll Number</label>
+                <input type="text" id="rollNumber" placeholder="Enter your roll number" name="rollNumber"
+                       class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            </div>
+
+            <button type="submit"
+                    class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition text-lg font-semibold">
+                Get Result
+            </button>
+        </form>
+    </div>
+
+    <!-- Result Card (Hidden Initially) -->
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white text-center py-6 mt-20">
+    <p class="text-sm">&copy; 2025 Smart Result. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+</script>
+</body>
+</html>

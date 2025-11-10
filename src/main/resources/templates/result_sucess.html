@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Added Successfully | SmartResult</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<div class="bg-white shadow-lg rounded-2xl p-8 max-w-md w-full text-center">
+    <!-- Success Icon -->
+    <div class="flex justify-center mb-4">
+        <svg class="w-16 h-16 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2l4-4m6 2a9 9 0 11-18 0a9 9 0 0118 0z" />
+        </svg>
+    </div>
+
+    <!-- Success Message -->
+    <h1 class="text-2xl font-bold text-gray-800">Student Added Successfully!</h1>
+    <h1 class="text-2xl font-bold text-gray-800">Student name : <span th:text="${studentForm.name}"></span></h1>
+    <p class="text-gray-600 mt-2">The student's details and marks have been saved successfully.</p>
+
+    <!-- Action Buttons -->
+    <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+        <a th:href="@{'/results/add'}"
+           class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
+            Add Another Student
+        </a>
+        <a th:href="@{'/results/view'}"
+           class="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 transition">
+            View Results
+        </a>
+        <a href="/"
+           class="bg-gray-600 text-white px-5 py-2 rounded-lg hover:bg-gray-700 transition">
+            Back to Home
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

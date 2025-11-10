@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Not Found | SmartResult</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<div class="bg-white shadow-lg rounded-2xl p-8 max-w-md w-full text-center">
+  <!-- Success Icon -->
+  <div class="flex justify-center mb-4">
+    <svg viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2.20164 18.4695L10.1643 4.00506C10.9021 2.66498 13.0979 2.66498 13.8357 4.00506L21.7984 18.4695C22.4443 19.6428 21.4598 21 19.9627 21H4.0373C2.54022 21 1.55571 19.6428 2.20164 18.4695Z" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 9V13" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 17.0195V17" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+  </div>
+
+  <!-- Success Message -->
+  <h1 class="text-2xl font-bold text-gray-800">Error!</h1>
+
+  <p class="text-gray-600 mt-2">The student's details and marks Not found in Database.</p>
+
+  <!-- Action Buttons -->
+  <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+    <a th:href="@{'/results/input'}" class="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 transition"
+       >
+      View Another Results
+    </a>
+    <a href="/"
+       class="bg-gray-600 text-white px-5 py-2 rounded-lg hover:bg-gray-700 transition">
+      Back to Home
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
